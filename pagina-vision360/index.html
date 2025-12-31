@@ -155,7 +155,7 @@
     <div id="video-modal" class="video-modal" aria-hidden="true">
         <div class="video-modal-content">
             <button id="video-close" class="video-close" aria-label="Cerrar">✕</button>
-            <video id="modal-video" src="" poster="foto1.jpg" controls muted playsinline></video>
+                <video id="modal-video" src="" poster="foto1.jpg" controls muted preload="metadata" playsinline webkit-playsinline></video>
         </div>
     </div>
 
@@ -168,16 +168,15 @@
             // Open modal when clicking any trigger
             document.querySelectorAll('.proyecto-trigger').forEach(el => {
                 el.addEventListener('click', () => {
-                    const src = el.getAttribute('data-video');
-                    if(!src) return;
-                    // set modal video src and play muted (no audio)
-                    modalVideo.src = src;
-                    modalVideo.muted = true;
-                    modalVideo.currentTime = 0;
-                    modalVideo.play().catch(()=>{});
-                    modal.style.display = 'flex';
-                    modal.setAttribute('aria-hidden','false');
-                });
+                        const src = el.getAttribute('data-video');
+                        if(!src) return;
+                        // set modal video src (muted) but DO NOT autoplay — let user press play
+                        modalVideo.src = src;
+                        modalVideo.muted = true;
+                        modalVideo.currentTime = 0;
+                        modal.style.display = 'flex';
+                        modal.setAttribute('aria-hidden','false');
+                    });
             });
 
             // Close modal
