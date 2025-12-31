@@ -91,7 +91,7 @@
                 
                 <div class="proyecto-card proyecto-trigger" data-video="video-barreras.mp4">
                     <div class="proyecto-thumb-wrap">
-                        <img src="foto1.jpg" alt="Acceso corporativo" class="proyecto-thumb">
+                        <img src="laguna.jpg" alt="Acceso Laguna Blanca" class="proyecto-thumb">
                     </div>
                     <div class="proyecto-info">
                         <span class="tag">Corporativo</span>
@@ -155,7 +155,7 @@
     <div id="video-modal" class="video-modal" aria-hidden="true">
         <div class="video-modal-content">
             <button id="video-close" class="video-close" aria-label="Cerrar">✕</button>
-                <video id="modal-video" src="" poster="foto1.jpg" controls muted preload="metadata" playsinline webkit-playsinline></video>
+                <video id="modal-video" src="" poster="laguna.jpg" controls muted preload="metadata" playsinline webkit-playsinline></video>
         </div>
     </div>
 
@@ -170,12 +170,14 @@
                 el.addEventListener('click', () => {
                         const src = el.getAttribute('data-video');
                         if(!src) return;
-                        // set modal video src (muted) but DO NOT autoplay — let user press play
+                        // set modal video src (muted) and autoplay
                         modalVideo.src = src;
                         modalVideo.muted = true;
                         modalVideo.currentTime = 0;
                         modal.style.display = 'flex';
                         modal.setAttribute('aria-hidden','false');
+                        // autoplay
+                        setTimeout(()=>{ modalVideo.play(); }, 100);
                     });
             });
 
