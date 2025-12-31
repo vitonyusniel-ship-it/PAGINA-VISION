@@ -150,10 +150,7 @@
         <div class="copy">© 2025 Vision360 - Todos los derechos reservados</div>
     </footer>
 
-    <audio id="bg-music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop preload="auto"></audio>
-
-    <!-- Control flotante de música -->
-    <button id="music-toggle" class="music-toggle-floating" aria-label="Reproducir música">🎵</button>
+    <!-- background audio removed as requested -->
 
     <!-- Modal de video -->
     <div id="video-modal" class="video-modal" aria-hidden="true">
@@ -165,26 +162,16 @@
 
     <script>
         (function(){
-            const audio = document.getElementById('bg-music');
-            const musicBtn = document.getElementById('music-toggle');
             const modal = document.getElementById('video-modal');
             const modalVideo = document.getElementById('modal-video');
             const closeBtn = document.getElementById('video-close');
-
-            // Music control (floating button)
-            musicBtn.addEventListener('click', () => {
-                if(audio.paused){ audio.volume = 0.18; audio.play().catch(()=>{}); musicBtn.textContent='🔊'; }
-                else { audio.pause(); musicBtn.textContent='🎵'; }
-            });
 
             // Open modal when clicking any trigger
             document.querySelectorAll('.proyecto-trigger').forEach(el => {
                 el.addEventListener('click', () => {
                     const src = el.getAttribute('data-video');
                     if(!src) return;
-                    // pause background music
-                    try{ audio.pause(); musicBtn.textContent='🎵'; }catch(e){}
-                    // set modal video src and play muted
+                    // set modal video src and play muted (no audio)
                     modalVideo.src = src;
                     modalVideo.muted = true;
                     modalVideo.currentTime = 0;
