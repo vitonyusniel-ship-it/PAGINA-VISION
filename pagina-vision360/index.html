@@ -89,11 +89,11 @@
             <h2 class="titulo-seccion">Proyectos Ejecutados</h2>
             <div class="grid-layout">
                 
-                <div class="proyecto-card">
-                    <button class="music-toggle" id="music-toggle" aria-label="Reproducir música">🎵</button>
-                    <video src="video-barreras.mp4" poster="foto1.jpg" controls muted playsinline style="width:100%; height:100%; object-fit:cover;">Tu navegador no soporta video.</video>
-                    <!-- Si prefieres usar una imagen estática en vez de video, reemplaza el <video> por la <img> siguiente -->
-                    <!-- <img src="foto1.jpg" alt="Acceso corporativo"> -->
+                <div class="proyecto-card proyecto-trigger" data-video="video-barreras.mp4">
+                    <div class="proyecto-thumb-wrap">
+                        <img src="foto1.jpg" alt="Acceso corporativo" class="proyecto-thumb">
+                        <div class="play-overlay">▶</div>
+                    </div>
                     <div class="proyecto-info">
                         <span class="tag">Corporativo</span>
                         <h3>Acceso Automatizado</h3>
