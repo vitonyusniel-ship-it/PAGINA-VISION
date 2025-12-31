@@ -69,6 +69,25 @@ nav a:hover { color: var(--azul); }
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Botón de control de música sobre la tarjeta de proyecto */
+.music-toggle {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    z-index: 40;
+}
+
+@media (max-width: 768px){
+    .music-toggle { top: 8px; right: 8px; padding: 8px; }
+}
+
 .proyecto-card img {
     width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.5s;
 }
