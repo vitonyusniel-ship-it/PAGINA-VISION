@@ -126,12 +126,19 @@ footer { background: var(--oscuro); color: white; padding: 80px 0 20px; }
 }
 .grid-marcas img {
     height: 40px;
-    filter: grayscale(100%); /* Los hace ver más profesionales */
-    opacity: 0.6;
-    transition: 0.4s;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: 0.35s;
 }
 .grid-marcas img:hover {
     filter: grayscale(0%);
     opacity: 1;
     transform: scale(1.1);
 }
+
+/* Estilos específicos para marcas dentro del footer */
+.footer-marcas { padding: 30px 0 10px; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-marcas .texto-marcas { color: rgba(255,255,255,0.75); margin-bottom: 16px; }
+.footer-marcas .grid-marcas { justify-content: center; gap: 36px; }
+.footer-marcas .grid-marcas img { height: 44px; filter: none; opacity: 0.95; }
+.footer-marcas .grid-marcas img:hover { transform: scale(1.05); }
