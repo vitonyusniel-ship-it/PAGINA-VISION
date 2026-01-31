@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PAGINA VISION</title>
+  <meta name="description" content="Página web de VISION.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>PAGINA VISION</h1>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero container">
+      <h2>Bienvenido a VISION</h2>
+      <p>Descripción breve. Agrega aquí tu texto.</p>
+    </section>
+
+    <section id="servicios" class="container">
+      <h3>Servicios</h3>
+      <div class="cards">
+        <article class="card">
+          <h4>Servicio 1</h4>
+          <p>Descripción.</p>
+        </article>
+        <article class="card">
+          <h4>Servicio 2</h4>
+          <p>Descripción.</p>
+        </article>
+        <article class="card">
+          <h4>Servicio 3</h4>
+          <p>Descripción.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="container">
+      <h3>Contacto</h3>
+      <form id="contact-form">
+        <label>Nombre
+          <input type="text" name="name" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" required>
+        </label>
+        <label>Mensaje
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button type="submit">Enviar</button>
+      </form>
+      <p class="note">Este formulario abre tu cliente de correo. Para procesamiento por servidor, configura un backend o un servicio como Formspree.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> VISION</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const f = e.target;
+      const subject = encodeURIComponent('Contacto desde PAGINA VISION: ' + f.name.value);
+      const body = encodeURIComponent('Nombre: ' + f.name.value + '\nEmail: ' + f.email.value + '\n\n' + f.message.value);
+      window.location.href = 'mailto:tu-email@ejemplo.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
